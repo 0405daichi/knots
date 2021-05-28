@@ -1,24 +1,74 @@
-# README
+# アプリケーション名
+  knots(ノッツ)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+  相談したいことを投稿すると寄付金とアドバイスをもらえる。
 
-Things you may want to cover:
+# テスト用アカウント
+  現段階ではユーザー登録機能未実装
 
-* Ruby version
+# 利用方法
+  このアプリケーションには相談者と相談に乗る人がいます。相談者は相談したいことを投稿ページから投稿できます。相談に乗る人は投稿されている相談にコメントすることができます。ただし、コメントするためにはお金が必要になります。
 
-* System dependencies
+# 目指した課題解決
+  ・立ち上げたいプロジェクトはあるが、相談する人もプロジェクトを立ち上げられるお金もない人がアドバイスや資金をもらうことができる。
 
-* Configuration
+  ・投資や人助けをしたい富裕層や困っている人にお金を出せる人、アドバイスしたい人にとってのまとめサイトになる
 
-* Database creation
+# 洗い出した要件
+  https://docs.google.com/spreadsheets/d/1FitFfMRoKfV4P39euat3KS4Nl6W4CVM9TP2PvJPwX70/edit?usp=sharing
 
-* Database initialization
+# 実装機能の詳細
+## トピック一覧
+   [![Image from Gyazo](https://i.gyazo.com/0d7d76a2e977275d8c3c1c422797754b.png)](https://gyazo.com/0d7d76a2e977275d8c3c1c422797754b)
+## トピック詳細ページ表示機能
+   [![Image from Gyazo](https://i.gyazo.com/5798eb53c89b565bb6956dc3568bbe96.jpg)](https://gyazo.com/5798eb53c89b565bb6956dc3568bbe96)
+## トピック編集機能
+   [![Image from Gyazo](https://i.gyazo.com/d02f219d95fb4352a76535692ea3a61e.jpg)](https://gyazo.com/d02f219d95fb4352a76535692ea3a61e)
 
-* How to run the test suite
+# 実装予定機能
+## メッセージ送信機能（寄付機能）
+## ユーザー管理機能
+## バリデーション
 
-* Services (job queues, cache servers, search engines, etc.)
+# ER図
+  [![Image from Gyazo](https://i.gyazo.com/8ac9a968b5fe62ba979e708edd7e43f3.png)](https://gyazo.com/8ac9a968b5fe62ba979e708edd7e43f3)
 
-* Deployment instructions
+## users テーブル
 
-* ...
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+
+### Association
+
+- has_many :topics
+- has_many :messages
+
+## topics テーブル
+
+| Column         | Type   | Options     |
+| -------------- | ------ | ----------- |
+| topic_name     | string | null: false |
+| topic_content  | text   | null: false |
+
+### Association
+
+- belongs_to :user
+- has_many :messages
+
+## messages テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | text       |                                |
+| price   | integer    | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :message
+- belongs_to :user
