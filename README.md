@@ -49,10 +49,11 @@
 
 ## topics テーブル
 
-| Column         | Type   | Options     |
-| -------------- | ------ | ----------- |
-| topic_name     | string | null: false |
-| topic_content  | text   | null: false |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| topic_name     | string     | null: false                    |
+| topic_content  | text       | null: false                    |
+| user           | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -66,9 +67,8 @@
 | content | text       |                                |
 | price   | integer    | null: false, foreign_key: true |
 | user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :message
+- belongs_to :topic
 - belongs_to :user
