@@ -1,0 +1,18 @@
+<div class="topic-main">
+  <%= form_with model: @topic, class: 'form',  local: true do |f| %>
+  編集画面
+  <div class="topic_name">
+  題名
+  </div>
+  <%= f.text_area :topic_name, class:"topic-name" %>
+  
+  <div class="topic_content">
+  内容
+  </div>
+  <%= f.text_area :topic_content, class:"topic-content"%>
+
+  <div class="topic-btn">
+    <%= f.submit "変更する", class: "topic-btn" %>
+  </div>
+  <% end %>
+</div>
