@@ -1,0 +1,17 @@
+<div class="topic-main">
+  <%= form_with model: @topic, class: 'form',  local: true do |f| %>
+  <div class="new-topic">
+  題名
+  </div>
+  <%= f.text_area :topic_name, class:"topic-name" %>
+  
+  <div class="new-topic">
+  内容
+  </div>
+  <%= f.text_area :topic_content, class:"topic-content"%>
+
+  <div class="topic-btn">
+    <%= f.submit "投稿する", class: "topic-btn" %>
+  </div>
+  <% end %>
+</div>
