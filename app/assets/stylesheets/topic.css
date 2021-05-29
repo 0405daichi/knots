@@ -1,0 +1,33 @@
+.topic{
+  border: #434a54 1px solid;
+  margin: 40px 250px;
+}
+
+.upper-topic{
+  display: flex;
+  justify-content: center;
+}
+
+.topic-content{
+  color: #434a54;
+  font-size: 50px;
+  padding: 40px;
+}
+
+
+
+.lower-topic{
+  margin-top: 10px;
+  margin-left: 1000px;
+}
+
+.topic-user{
+  color: #434a54;
+  font-size: 16px;
+}
+
+.topic-date{
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}

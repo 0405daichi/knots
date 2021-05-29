@@ -1,2 +1,23 @@
-<h1>Topics#index</h1>
-<p>Find me in app/views/topics/index.html.erb</p>
+<%= render "header" %>
+<div class="topics">
+  <% @topics.each do |topic| %>
+    <div class="topic">
+      <%= link_to topics_path(topic.id) do %>
+        <div class="upper-topic">
+          <div class="topic-content">
+          <%= topic.topic_name %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="lower-topic">
+        <div class="topic-user">
+          投稿者名を出力する
+        </div>
+        <div class="topic-date">
+          <%= topic.created_at %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
