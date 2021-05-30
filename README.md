@@ -45,7 +45,7 @@
 ### Association
 
 - has_many :topics
-- has_many :messages
+- has_many :comments
 
 ## topics テーブル
 
@@ -58,15 +58,16 @@
 ### Association
 
 - belongs_to :user
-- has_many :messages
+- has_many :comments
 
-## messages テーブル
+## comments テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | content | text       |                                |
 | price   | integer    | null: false, foreign_key: true |
 | user    | references | null: false, foreign_key: true |
+| topic   | references | null: false, foreign_key: true |
 
 ### Association
 

@@ -19,6 +19,8 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @comment = Comment.new
+    @comments = @topic.comments.includes(:user)
   end
 
   def edit
