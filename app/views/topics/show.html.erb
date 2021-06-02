@@ -24,23 +24,29 @@
   <div class="comment-box">
     <div class="comment">
       <% if user_signed_in? %>
-        <%= form_with(model: [@topic, @comment], local: true) do |f| %>
-          <%= f.text_area :content, placeholder: "コメントする", rows: "2" %>
-          <%= f.submit "SEND" %>
+        <%= link_to topic_comments_path(@topic.id) do %>
+        コメントする
         <% end %>
       <% else %>
         <strong><p>コメント投稿には新規登録/ログインが必要です</p></strong>
       <% end %>
 
       <div class="comments">
-      <h4>＜コメント一覧＞</h4>
-      <% @comments.each do |comment| %>
-        <p>
-          <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.content %>
-        </p>
-      <% end %>
-    </div>
+        <h4>＜コメント一覧＞</h4>
+        <% @comments.each do |c| %>
+          <% if user_signed_in? %>
+          <p>
+            <strong><%= link_to c.user.name, "/users/#{c.user_id}" %>：</strong>
+            <%= c.content %>
+          </p>
+          <% else %>
+          <p>
+            <strong><%= c.user.name %>：</strong>
+            <%= c.content %>
+          </p>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

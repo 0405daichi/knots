@@ -65,7 +65,6 @@
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | content | text       |                                |
-| price   | integer    | null: false, foreign_key: true |
 | user    | references | null: false, foreign_key: true |
 | topic   | references | null: false, foreign_key: true |
 
@@ -73,3 +72,17 @@
 
 - belongs_to :topic
 - belongs_to :user
+- has_one :donation
+
+
+## donations テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| price     | integer    | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| comment   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :comment
