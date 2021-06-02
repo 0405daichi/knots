@@ -9,7 +9,6 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params)
-    binding.pry
     if @topic.save
       redirect_to root_path
     else
@@ -31,7 +30,7 @@ class TopicsController < ApplicationController
     if @topic.update(topic_params)
       redirect_to root_path
     else
-      render :edit
+      render action: :edit
     end
   end
 
