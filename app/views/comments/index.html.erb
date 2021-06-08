@@ -1,3 +1,9 @@
+<header class="come-head">
+<div class="nav">
+コメント入力ページ
+</div>
+</header>
+<div class="come-input">
 <%= form_with model: @comment_donation, url: topic_comments_path, id: 'charge-form', method: :post, local: true do |f| %>
 
 <%= render 'shared/error_messages', model: f.object %>
@@ -19,7 +25,12 @@
       <p>年</p>
     </div>
   </div>
-  <%= f.text_area :content, placeholder: "コメントする", rows: "2" %>
-  <%= f.text_area :price, placeholder: "ギフトの金額を入力" %>
-  <%= f.submit "SEND" %>
+
+  <div class="input-comments">
+  <p>入力欄</p>
+  <%= f.text_area :content, placeholder: "コメントを入力", rows: "2", class:"comment-in" %>
+  <%= f.text_area :price, placeholder: "ギフトの金額を入力", class:"price-in" %>
+  <%= f.submit "SEND", class:"send-btn" %>
+  </div>
 <% end %>
+</div>

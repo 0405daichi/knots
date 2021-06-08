@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :find_topic, only: [:show, :edit, :update]
   def index
     @topics = Topic.all
   end
@@ -17,16 +19,13 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
     @comments = @topic.comments.includes(:user)
   end
 
   def edit
-    @topic = Topic.find(params[:id])
   end
 
   def update
-    @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
       redirect_to root_path
     else
@@ -44,5 +43,9 @@ class TopicsController < ApplicationController
 
   def topic_params
     params.require(:topic).permit(:topic_name, :topic_content).merge(user_id: current_user.id)
+  end
+
+  def find_topic
+    @topic = Topic.find(params[:id])
   end
 end

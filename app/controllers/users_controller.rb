@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @name = current_user.name
-    @topics = current_user.topics
+    @user = User.find(params[:id])
+    @topics = @user.topics
   end
 end

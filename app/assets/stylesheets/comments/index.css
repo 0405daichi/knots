@@ -1,0 +1,89 @@
+.come-head{
+  background-color: rgb(0, 166, 255);
+  padding: 50px;
+}
+
+.nav{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+}
+
+.come-input{
+  background-color: rgb(0, 166, 255);
+  height: 1000px;
+  padding-top: 30px;
+}
+
+.form-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.number{
+  width: 300px;
+  height: 60px;
+  border: solid 3px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.cvc{
+  width: 300px;
+  height: 60px;
+  border: solid 3px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.exp_month{
+  width: 100px;
+  height: 60px;
+  border: solid 3px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.exp_year{
+  width: 100px;
+  height: 60px;
+  border: solid 3px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.input-comments{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  margin-left: 630px;
+  margin-top: 30px;
+}
+
+.comment-in{
+  width: 500px;
+  height: 100px;
+  border: solid 3px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.price-in{
+  width: 200px;
+  height: 60px;
+  border: solid 3px;
+  border-radius: 10px;
+  margin: 20px;
+  margin-left: 130px;
+}
+
+.send-btn{
+  border-radius: 10px;
+  background-color: rgb(42, 210, 117);
+  width: 200px;
+  height: 60px;
+  margin-left: 130px;
+  margin-top: 30px;
+}

@@ -1,0 +1,33 @@
+.user-head{
+  background-color: rgb(0, 166, 255);
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.user-nav{
+  font-size: 20px;
+  color: white;
+}
+
+.log-out{
+  font-size: 20px;
+  margin-left: 100px;
+}
+
+.logout{
+  text-decoration: none;
+  color: white;
+}
+
+.contents-row{
+  background-color: rgb(0, 166, 255);
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+
+
+

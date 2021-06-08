@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :topic
-  belongs_to :user
+  belongs_to :topic, dependent: :destroy
+  belongs_to :user, dependent: :destroy
   has_one :donation
 end

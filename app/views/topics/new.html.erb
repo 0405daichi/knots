@@ -1,3 +1,9 @@
+<header class="new-head">
+<div class="new-nav">
+  新規投稿ページ
+</div>
+</header>
+
 <div class="topic-main">
   <%= form_with model: @topic, class: 'form',  local: true do |f| %>
 
@@ -14,7 +20,7 @@
   <%= f.text_area :topic_content, class:"topic-content"%>
 
   <div class="topic-btn">
-    <%= f.submit "投稿する", class: "topic-btn" %>
+    <%= f.submit "投稿する", class: "send_btn" %>
   </div>
   <% end %>
 </div>
