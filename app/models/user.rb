@@ -10,6 +10,6 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'に半角英数字を使用してください' }
 
-  has_many :topics
-  has_many :comments
+  has_many :topics, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

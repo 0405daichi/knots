@@ -1,23 +1,19 @@
-<%= render "header" %>
+<%= render "shared/header" %>
+
 <div class="topics">
-  <% @topics.each do |topic| %>
-    <div class="topic">
-      <%= link_to topic_path(topic.id) do %>
-        <div class="upper-topic">
-          <div class="topic-content">
+  <div class="topic">
+    <% @topics.each do |topic| %>
+      <div class="upper-topic">
+        <%= link_to topic_path(topic.id), class: 'name' do %>
+          <div class="topic_name">
           <%= topic.topic_name %>
           </div>
-        </div>
-      <% end %>
-
-      <div class="lower-topic">
-        <div class="topic-user">
-          <%= topic.user.name %>
-        </div>
-        <div class="topic-date">
-          <%= topic.created_at %>
-        </div>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+
+      <div class="topic-users">
+        投稿者:<%= topic.user.name %>
+      </div>
+    <% end %>
+  </div>
 </div>

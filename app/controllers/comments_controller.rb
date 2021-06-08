@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:index]
   def index
     @comment_donation = CommentDonation.new
   end

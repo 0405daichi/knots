@@ -1,11 +1,27 @@
-<div class="contents row">
-  <p><%= @name %>さんの相談一覧</p>
+<header class="user-head">
+<div class="user-nav">
+  <%= @user.name %>さんの相談一覧
+</div>
+<div class="log-out">
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+</div>
+</header>
+
+<div class="contents-row">
+<div class="contents">
   <% @topics.each do |topic| %>
-    <div>
-      <span class="name"><%= topic.topic_name %></span>
-      <p><%= topic.topic_content %></p>
+    <div class="topic-name">
+      <%= topic.topic_name %>
     </div>
-    <%= link_to '編集', edit_topic_path, method: :get, class: "edit-btn" %>
-    <%= link_to "削除", topic_path, method: :delete, class: "delete-btn" %>
+
+    <div class="topic-content">
+      <%= topic.topic_content %>
+    </div>
+
+    <div class="detail">
+      <%= link_to '詳細', topic_path(topic.id), method: :get %>
+    </div>
+
   <% end %>
+</div>
 </div>

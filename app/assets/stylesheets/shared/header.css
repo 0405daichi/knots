@@ -1,0 +1,36 @@
+.top-page-header{
+  background-color:rgb(0, 166, 255);
+  padding: 50px;
+}
+
+.lists-right{
+  display: flex;
+}
+
+.new{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin-right: 100px;
+}
+
+.my{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 100px;
+}
+
+.rog-in{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin-right: 100px;
+}
+
+.sign-in{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 100px;
+}
