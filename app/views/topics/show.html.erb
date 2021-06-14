@@ -1,5 +1,5 @@
 <header class="show-head">
-  <% if current_user.id == @topic.user_id %>
+  <% if current_user == @topic.user %>
     <div class="edit-delete">
     <div class="show-edit">
       <%= link_to '編集', edit_topic_path(@topic.id), class: 'show_edit' %>
@@ -26,7 +26,7 @@
       <%= @topic.topic_content %>
     </div>
 
-    <% if current_user.id == @topic.user_id %>
+    <% if current_user == @topic.user %>
     <div class="topic-user">
     by:
     <%= link_to user_path(current_user.id), class: "user" do %>
