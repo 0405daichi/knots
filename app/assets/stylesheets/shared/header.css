@@ -1,10 +1,24 @@
-.top-page-header{
-  background-color:rgb(0, 166, 255);
+header{
   padding: 50px;
+  background-color: gray;
 }
 
-.lists-right{
+.nav{
   display: flex;
+  justify-content: space-between;
+}
+
+.root{
+  text-decoration: none;
+  color: white;
+}
+
+.lists{
+  display: flex;
+}
+
+.list{
+  list-style: none;
 }
 
 .new{

@@ -1,26 +1,7 @@
-.show-head{
-  background-color: rgb(0, 166, 255);
-  padding: 50px;
-}
-
-.edit-delete{
-  display: flex;
-  justify-content: center;
-}
-
-.show-edit{
-  font-size: 20px;
-  margin-right: 100px;
-}
 
 .show_edit{
   text-decoration: none;
   color: white;
-}
-
-.show-destroy{
-  font-size: 20px;
-  margin-left: 100px;
 }
 
 .show_destroy{
@@ -28,97 +9,85 @@
   color: white;
 }
 
-.show-nav{
-  font-size: 20px;
-  color: white;
-}
-
 .topic-show{
   background-color: rgb(0, 166, 255);
-  height: 1000px;
-  padding-top: 30px;
 }
 
 .topic-box{
-  margin: 0px 400px;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .topic-name{
-  font-size: 30px;
+  background-color: white;
   border: solid 3px;
   border-radius: 10px;
+  margin-bottom: 10px;
   padding: 10px 0px;
-  background-color: white;
-  width: 900px;
-  display: flex;
-  justify-content: center;
+  font-size: 50px;
 }
 
 .topic-content{
-  font-size: 40px;
-  border: solid 3px;
-  border-radius: 10px;
   background-color: white;
-  width: 900px;
-  margin: 30px 0px;
-  display: flex;
-  justify-content: center;
-}
-
-.topic-user{
   border: solid 3px;
   border-radius: 10px;
-  background-color: rgb(42, 210, 117);
-  margin: 30px 360px;
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  width: 150px;
+  margin-bottom: 10px;
+  padding: 10px 0px;
+  font-size: 50px;
 }
 
-.user{
+h2{
+  text-align: center;
+}
+
+.create-box{
+  width: 300px;
+  margin-left: auto;
+  margin-right: 250px;
+}
+
+p.one{
+  text-align: center;
+}
+
+.user-box{
+  width: 300px;
+  margin-left: auto;
+  margin-right: 250px;
+}
+
+.link-user{
   text-decoration: none;
-  color: white;
+  color: black;
+}
+
+p.two{
+  text-align: center;
 }
 
 .comment-box{
+  width: 300px;
+  margin-right: auto;
+  margin-left: 700px;
   background-color: white;
-  width: 500px;
-  height: 500px;
   border: solid 3px;
   border-radius: 10px;
-  margin: 20px 600px;
 }
 
-.comments{
-  margin: 30px;
-  font-size: 20px;
-}
-
-.come-row{
-  margin-left: 170px;
-  font-size: 20px;
+p.three{
+  text-align: center;
 }
 
 .come-user{
   text-decoration: none;
-  color: rgb(42, 210, 117);
+  color: black;
 }
 
 .comment-btn{
-  border: solid 3px;
-  border-radius: 10px;
-  background-color: rgb(42, 210, 117);
-  margin: 30px 730px;
-  display: flex;
-  justify-content: center;
-}
-
-.com-btn{
+  margin: 0 auto;
 }
 
 .btn{
   text-decoration: none;
   color: white;
-  font-size: 20px;
 }

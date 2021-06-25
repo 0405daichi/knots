@@ -1,91 +1,77 @@
-<header class="show-head">
-  <% if current_user == @topic.user %>
-    <div class="edit-delete">
-    <div class="show-edit">
-      <%= link_to '編集', edit_topic_path(@topic.id), class: 'show_edit' %>
+<% if current_user == @topic.user %>
+  <header>
+    <div class="nav">
+      <div class="direct-top">
+        knots
+      </div>
+      <ul class="lists">
+        <li class="list"><%= link_to '編集', edit_topic_path(@topic.id), class: 'show_edit' %></li>
+        <li class="list"><%= link_to '削除', topic_path(@topic.id), class: 'show_destroy', method: :delete %></li>
+      </ul>
     </div>
-    <div class="show-destroy">
-      <%= link_to '削除', topic_path(@topic.id), class: 'show_destroy', method: :delete %>
-    </div>
-    </div>
-  <% else %>
-    <div class="edit-delete">
-    <div class="show-nav">
-    相談詳細ページ
-    </div>
-    </div>
-  <% end %>
-</head>
+  </header>
+<% else %>
+  <%= render "shared/header" %>
+<% end %>
+
 <div class="topic-show">
   <div class="topic-box">
     <div class="topic-name">
-      <%= @topic.topic_name %>
+      <h2><%= @topic.topic_name %></h2>
     </div>
 
     <div class="topic-content">
-      <%= @topic.topic_content %>
+      <h2><%= @topic.topic_content %></h2>
     </div>
+  </div>
 
+  <div class="create-box">
+    <div class="create-at">
+      <p class="one">投稿日：<%= @topic.created_at %></p>
+    </div>
+  </div>
+
+  <div class="user-box">
     <% if current_user == @topic.user %>
-    <div class="topic-user">
-    by:
-    <%= link_to user_path(current_user.id), class: "user" do %>
-      <%= @topic.user.name %>
-    <% end %>
-    </div>
+      <div class="topic-user">
+        <%= link_to user_path(current_user.id), class: "link-user" do %>
+          <p class="two">投稿者：<%= @topic.user.name %></p>
+        <% end %>
+      </div>
     <% else %>
-    <div class="topic-user">
-      <%= @topic.user.name %>
-    </div>
+      <div class="topic-user">
+        <p class="two">投稿者：<%= @topic.user.name %></p>
+      </div>
     <% end %>
   </div>
 
   <% if @comments.present?%>
     <div class="comment-box">
-        <div class="come-row">＜コメント一覧＞</div>
-          <div class="comments">
-            <% @comments.each do |c| %>
-              <% if user_signed_in? %>
-                <p>
-                  <strong><%= link_to c.user.name, "/users/#{c.user_id}", class: 'come-user' %>：</strong>
-                  <%= c.content %>
-                </p>
-              <% else %>
-                <p>
-                  <strong><%= c.user.name %>：</strong>
-                  <%= c.content %>
-                </p>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <div class="comment-btn">
-        <div class="com-btn">
-          <% if user_signed_in? %>
-            <%= link_to topic_comments_path(@topic.id), class: 'btn' do %>
-                コメントする
-            <% end %>
-          <% else %>
-            <strong><p>コメント投稿には新規登録/ログインが必要です</p></strong>
-          <% end %>
-        </div>
+      <div class="comment-nav">
+        <p class="three">＜コメント＞</p>
       </div>
-  <% else %> 
-      <div class="comment-btn">
-        <div class="com-btn">
+      <div class="comment-row">
+        <% @comments.each do |c| %>
           <% if user_signed_in? %>
-            <%= link_to topic_comments_path(@topic.id), class: 'btn' do %>
-                コメント
-            <% end %>
-          <% elsif user_signed_in? && @comments == nil %>
-            <%= link_to topic_comments_path(@topic.id), class: 'btn' do %>
-                コメント
-            <% end %>
-          <% else %>
-            <strong><p>コメント投稿には新規登録/ログインが必要です</p></strong>
+          <p class="four"><%= link_to c.user.name, "/users/#{c.user_id}", class: 'come-user' %>：<%= c.content %></p>
+        <% else %>
+          <p class="four"><%= c.user.name %>：<%= c.content %></p>
           <% end %>
-        </div>
+        <% end %>
       </div>
     </div>
   <% end %>
+
+  <div class="comment-btn">
+    <div class="btn">
+      <% if user_signed_in? %>
+        <%= link_to topic_comments_path(@topic.id), class: 'btn' do %>
+        <h2>コメントする</h2>
+        <% end %>
+      <% else %>
+        <h2>コメントには新規登録/ログインが必要です</h2>
+      <% end %>
+    </div>
+  </div>
+  <%= render "shared/footer" %>
 </div>
